@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<center><h3>Portmanteau + Game = </h3></center>
+<center><h1 style="display:inline"><b><u>Gamanteau</u></b></h1></center>
+</head>
+
+<style>
+#wordContainer {
+    width: 100%;
+    padding: 50px 0;    
+    background-color: lightblue;
+    margin-top: 20px;
+}
+#sentenceContainer {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+	display: none ;
+}
+
+body {
+    font: normal 12px Verdana, Arial, sans-serif;
+}
+</style>
+
+<body onload="randomize();">
+
+<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+
+<script src="main.js" type="text/javascript"></script> 
+
+<script language="javascript">
+    randomize();
+</script>
+
+<script language="javascript">
+	filter();
+</script>
+
+<div style="float:center" id="wordContainer">
+  <center><p> <span style="display:inline" id="randWord1"></span> + <span style="display:inline" id="randWord2"></span> =
+  <input style="display:inline" type="text" id="wordText" size="12">  <input id="wordSubmit" type="button" onclick="wordSubmit();filter(document.getElementById('word').innerHTML);" value="Submit"> <input style="display:inline" id="randomizeButton" type="button" onclick="randomize();" value="Randomize"></center> </p>
+  <center><p><i>Tip: Say your new word out loud!</i></p></center>
+</div>
+
+<script language="javascript">
+	wordSubmit();
+</script>
+
+
+<div id="sentenceContainer">
+  <p>BONUS: Use <b>"<span id="word"></span>"</b> in a sentence.</p>
+  <center><input type="text" id="sentence" size="64"> </center>
+  <br>
+  <input id="sumbitTweet" type="button" value="Tweet Results">
+
+<script>
+  // onclick event is assigned to the #button element.
+  document.getElementById("sumbitTweet").onclick = function(){
+  formatTweet();}
+</script>
+
+<!--
+<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet"
+  data-size="small"
+  data-text="placeholder"
+  data-hashtags="gamanteau"
+  onclick="formatTweet();" 
+  data-related="twitterapi,twitter">
+Tweet
+</a>
+-->
+</div>
+
+
+</body>
+</html>
